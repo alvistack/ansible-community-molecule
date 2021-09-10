@@ -1,0 +1,3 @@
+python-molecule source: no-debian-changes
+python-molecule source: source-contains-prebuilt-windows-binary
+python-molecule source: source-package-encodes-python-version
