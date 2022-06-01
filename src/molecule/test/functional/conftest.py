@@ -28,11 +28,11 @@ from typing import Optional
 import pexpect
 import pytest
 from ansible_compat.ports import cache
+from ansible_compat.runtime import Runtime
 from packaging.version import Version
 
 import molecule
 from molecule import logger, util
-from molecule.app import app
 from molecule.test.conftest import change_dir_to, molecule_directory
 from molecule.text import strip_ansi_color
 from molecule.util import run_command
@@ -257,4 +257,5 @@ def supports_docker() -> bool:
 
 def min_ansible(version: str) -> bool:
     """Ensure current Ansible is newer than a given a minimal one."""
-    return bool(app.runtime.version >= Version(version))
+    runtime = Runtime()
+    return bool(runtime.version >= Version(version))
