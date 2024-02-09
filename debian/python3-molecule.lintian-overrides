@@ -1,0 +1,6 @@
+python3-molecule: copyright-without-copyright-notice
+python3-molecule: initial-upload-closes-no-bugs
+python3-molecule: no-manual-page
+python3-molecule: script-not-executable
+python3-molecule: unusual-interpreter
+python3-molecule: zero-byte-file-in-doc-directory

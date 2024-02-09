@@ -1,0 +1,6 @@
+*.substvars
+*debhelper*
+.debhelper
+files
+python3-molecule
+tmp
