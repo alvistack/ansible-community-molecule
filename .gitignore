@@ -179,3 +179,5 @@ tests/fixtures/resources/.extensions/
 # docs output
 _readthedocs/
 .ansible
+
+.pybuild/
