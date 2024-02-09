@@ -26,7 +26,7 @@ docs/docstree
 tools/test-schema/node_modules
 site
 .DS_Store
-src/molecule/_version.py
 .vscode
 test/resources/.extensions/
 venv
+.pybuild/
