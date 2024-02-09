@@ -178,3 +178,6 @@ tests/fixtures/resources/.extensions/
 
 # docs output
 _readthedocs/
+
+venv
+.pybuild/
