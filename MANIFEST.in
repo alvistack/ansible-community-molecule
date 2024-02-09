@@ -1,1 +1,8 @@
-prune asset
+include LICENSE
+include README.md
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+
+recursive-include src/molecule/cookiecutter **/*
+recursive-include src/molecule/data **/*
