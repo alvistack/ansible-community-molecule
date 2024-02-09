@@ -1,0 +1,5 @@
+python-molecule (100:24.2.0-1) UNRELEASED; urgency=medium
+
+  * https://github.com/ansible-community/molecule/releases/tag/24.2.0
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Fri, 09 Feb 2024 14:58:15 +0800
