@@ -3,10 +3,11 @@
 
 [project]
 name = "molecule"
+version = "25.12.0"
 description = "Molecule aids in the development and testing of Ansible roles"
 readme = "README.md"
 requires-python = ">=3.10"
-license = "MIT"
+license = { text = "MIT" }
 authors = [{ "name" = "Ansible by Red Hat", "email" = "info@ansible.com" }]
 maintainers = [{ "name" = "Ansible by Red Hat", "email" = "info@ansible.com" }]
 keywords = ["ansible", "molecule", "roles", "testing"]
@@ -44,7 +45,6 @@ dependencies = [
   "rich>=9.5.1",
   "wcmatch>=8.1.2",
 ]
-dynamic = ["version"]
 
 [project.urls]
 changelog = "https://github.com/ansible-community/molecule/releases"
@@ -101,7 +101,6 @@ pkg = ["build>=0.9", "pip>=25.2", "pipx>=1.7.1", "twine>=4.0.2"]
 
 [build-system]
 requires = [
-  "setuptools_scm[toml] >= 7.0.5",  # required for "no-local-version" scheme
   "setuptools >= 65.3.0",  # required by pyproject+setuptools_scm integration and editable installs
 ]
 build-backend = "setuptools.build_meta"
@@ -437,21 +436,6 @@ required-imports = ["from __future__ import annotations"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.setuptools_scm]
-# To prevent accidental pick of mobile version tags such 'v6'
-git_describe_command = [
-  "git",
-  "describe",
-  "--dirty",
-  "--long",
-  "--tags",
-  "--match",
-  "v*.*",
-]
-local_scheme = "no-local-version"
-tag_regex = "^(?P<prefix>v)?(?P<version>\\d+[^\\+]*)(?P<suffix>.*)?$"
-version_file = "src/molecule/_version.py"
 
 [tool.tomlsort]
 in_place = true
