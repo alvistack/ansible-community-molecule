@@ -1,0 +1,5 @@
+python-molecule (100:26.2.0-1) UNRELEASED; urgency=medium
+
+  * https://github.com/ansible-community/molecule/releases/tag/v26.2.0
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Thu, 26 Feb 2026 11:19:00 +0800
