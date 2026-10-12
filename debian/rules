@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	pip wheel \
+		--no-deps \
+		--no-build-isolation \
+		--wheel-dir=dist \
+		.
+
+override_dh_auto_install:
+	pip install \
+		--no-deps \
+		--ignore-installed \
+		--root=debian/tmp \
+		--prefix=/usr \
+		dist/*.whl
+	mv debian/tmp/usr/local/* debian/tmp/usr/ || echo $$?
+	rm -rf debian/tmp/usr/local || echo $$?
+	find debian/tmp/usr/lib/python*/*-packages -type f -name '*.pyc' -exec rm -rf {} \;
+	fdupes -qnrps debian/tmp/usr/lib/python*/*-packages
+	mkdir -p debian/tmp/usr/share/bash-completion/completions
+	install -Dpm644 asset/bash_completion/molecule.bash-completion.sh debian/tmp/usr/share/bash-completion/completions/molecule
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@ --with python3
